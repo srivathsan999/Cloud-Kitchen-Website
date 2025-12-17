@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cloud Kitchen</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3 text-2xl font-bold text-orange-600 dark:text-orange-400 hover:scale-105 transition-transform">
+                    <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>CloudKitchen</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                    <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <a href="login.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                </div>
+                <button id="mobile-menu-button" class="lg:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 dark:text-gray-300">Theme</span>
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="cart.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Cart</a>
+                <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-transparent dark:from-orange-900/20"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-orange-200 dark:bg-orange-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-72 h-72 bg-orange-300 dark:bg-orange-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-float" style="animation-delay: 1.5s;"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center animate-on-scroll">
+                <div class="inline-block mb-6">
+                    <span class="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4">
+                        🍽️ Discover Our Menu
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent">
+                    Our Menu
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Explore our delicious selection of freshly prepared meals
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16 animate-on-scroll">
+                <button class="filter-btn group relative px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold transition-all transform hover:scale-105 shadow-lg active" data-category="all">
+                    <span class="relative z-10">All</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-700 to-orange-600 dark:from-orange-600 dark:to-orange-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </button>
+                <button class="filter-btn group relative px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all transform hover:scale-105" data-category="burgers">
+                    <span>🍔 Burgers</span>
+                </button>
+                <button class="filter-btn group relative px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all transform hover:scale-105" data-category="pasta">
+                    <span>🍝 Pasta</span>
+                </button>
+                <button class="filter-btn group relative px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all transform hover:scale-105" data-category="chicken">
+                    <span>🍗 Chicken</span>
+                </button>
+                <button class="filter-btn group relative px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all transform hover:scale-105" data-category="salads">
+                    <span>🥗 Salads</span>
+                </button>
+                <button class="filter-btn group relative px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all transform hover:scale-105" data-category="desserts">
+                    <span>🍰 Desserts</span>
+                </button>
+            </div>
+
+            <!-- Food Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Food Card 1 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="burgers">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Classic Burger" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Classic Burger</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Beef patty, lettuce, tomato, special sauce</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$10.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 2 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="pasta">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop" alt="Creamy Pasta" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Creamy Pasta</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Penne pasta with creamy alfredo sauce</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$12.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 3 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="salads">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop" alt="Caesar Salad" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Caesar Salad</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Fresh romaine, parmesan, croutons</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$8.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 4 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="chicken">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400&h=300&fit=crop" alt="Grilled Chicken" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Grilled Chicken</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Tender chicken breast with herbs</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$14.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 5 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="main">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop" alt="Margherita Pizza" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Margherita Pizza</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Fresh mozzarella, basil, tomato sauce</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$13.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 6 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="desserts">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Chocolate Cake" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Chocolate Cake</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Rich chocolate cake with frosting</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$6.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 7 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="burgers">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop" alt="BBQ Burger" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">BBQ Burger</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Smoky BBQ sauce, crispy onion rings, cheese</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$11.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 8 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="pasta">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop" alt="Spaghetti Carbonara" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Spaghetti Carbonara</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Creamy sauce with bacon and parmesan cheese</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$13.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 9 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="salads">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop" alt="Greek Salad" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Greek Salad</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Fresh vegetables, feta cheese, olives, dressing</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$9.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 10 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="desserts">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=400&h=300&fit=crop" alt="Cheesecake" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">New York Cheesecake</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Creamy cheesecake with berry compote</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$7.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 11 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="burgers">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&h=300&fit=crop" alt="Veggie Burger" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Veggie Burger</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Plant-based patty with fresh vegetables</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$9.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 12 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="salads">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop" alt="Beef Salad" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Beef Salad</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Tender beef strips with fresh greens and vegetables</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$14.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 13 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="chicken">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=300&fit=crop" alt="Chicken Wings" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Buffalo Wings</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Spicy buffalo wings with blue cheese dip</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$12.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 14 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="desserts">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" alt="Ice Cream Sundae" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Ice Cream Sundae</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Vanilla ice cream with hot fudge and nuts</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$5.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Card 15 -->
+                <div class="menu-item food-card neomorphic rounded-2xl p-6 animate-on-scroll group" data-category="chicken">
+                    <div class="w-full h-56 rounded-xl mb-5 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" alt="Barbeque Chicken" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Barbeque Chicken</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Juicy chicken with tangy BBQ sauce</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$14.99</span>
+                        <button class="add-to-cart-btn px-6 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8 text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">CloudKitchen</h3>
+                    </div>
+                    <p class="text-gray-400">Fresh food delivered fast. Your favorite cloud kitchen for quality meals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-orange-400">About</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Operating Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Mon - Fri: 11:00 AM - 10:00 PM</li>
+                        <li>Sat - Sun: 12:00 PM - 11:00 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CloudKitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/menu-filter.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        const mobileToggle = document.getElementById('theme-toggle-mobile');
+        const mainToggle = document.getElementById('theme-toggle');
+        if (mobileToggle && mainToggle) {
+            mobileToggle.addEventListener('click', () => mainToggle.click());
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Cloud Kitchen</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex items-center justify-center px-4 py-12">
+    <!-- Signup Card -->
+    <div class="w-full max-w-md glass rounded-3xl p-8 md:p-12 shadow-xl animate-on-scroll">
+        <div class="text-center mb-8">
+            <a href="index.html" class="flex items-center justify-center gap-3 text-3xl font-bold text-orange-600 dark:text-orange-400 mb-4 hover:scale-105 transition-transform">
+                <svg class="w-10 h-10 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>CloudKitchen</span>
+            </a>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Create Account</h1>
+            <p class="text-gray-600 dark:text-gray-400">Join us and start ordering delicious food</p>
+        </div>
+
+        <form class="space-y-5">
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Full Name</label>
+                <input type="text" class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="John Doe" required>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Email</label>
+                <input type="email" class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="your@email.com" required>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Phone Number</label>
+                <input type="tel" class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="+1 (234) 567-8900">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Password</label>
+                <input type="password" id="password" class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="••••••••" required>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="••••••••" required>
+                <p id="passwordMatch" class="hidden text-sm mt-1 text-red-500"></p>
+            </div>
+            
+            <div class="flex items-start">
+                <input type="checkbox" id="terms" class="mt-1 w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500" required>
+                <label for="terms" class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                    I agree to the 
+                    <a href="#" class="text-orange-600 dark:text-orange-400 hover:underline">Terms of Service</a> 
+                    and 
+                    <a href="#" class="text-orange-600 dark:text-orange-400 hover:underline">Privacy Policy</a>
+                </label>
+            </div>
+            
+            <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white py-4 rounded-xl font-bold text-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">
+                Create Account
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <p class="text-gray-600 dark:text-gray-400">
+                Already have an account? 
+                <a href="login.html" class="text-orange-600 dark:text-orange-400 hover:underline font-semibold">Sign in</a>
+            </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-center">
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Password matching validation
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const passwordMatch = document.getElementById('passwordMatch');
+        const form = document.querySelector('form');
+
+        function validatePasswords() {
+            if (confirmPassword.value && password.value !== confirmPassword.value) {
+                passwordMatch.textContent = 'Passwords do not match';
+                passwordMatch.classList.remove('hidden');
+                confirmPassword.classList.add('border-red-500');
+                confirmPassword.classList.remove('border-gray-300', 'dark:border-gray-600');
+            } else {
+                passwordMatch.classList.add('hidden');
+                confirmPassword.classList.remove('border-red-500');
+                confirmPassword.classList.add('border-gray-300', 'dark:border-gray-600');
+            }
+        }
+
+        confirmPassword.addEventListener('input', validatePasswords);
+        password.addEventListener('input', validatePasswords);
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (password.value !== confirmPassword.value) {
+                validatePasswords();
+                return;
+            }
+
+            // Here you would typically send the data to a server
+            // For now, we'll just show a success message and redirect
+            alert('Account created successfully! Redirecting to login...');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
+

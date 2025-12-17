@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cloud Kitchen</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3 text-2xl font-bold text-orange-600 dark:text-orange-400 hover:scale-105 transition-transform">
+                    <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>CloudKitchen</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                    <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <a href="login.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                </div>
+                <button id="mobile-menu-button" class="lg:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 dark:text-gray-300">Theme</span>
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="cart.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Cart</a>
+                <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-transparent dark:from-orange-900/20"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent">
+                    Our Story
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    From a simple idea to serving thousands of happy customers
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main About Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Who We Are Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
+                <div class="animate-on-scroll order-2 lg:order-1">
+                    <div class="glass rounded-3xl p-8 md:p-12">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Who We Are</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                CloudKitchen was born from a simple idea: <strong class="text-orange-600 dark:text-orange-400">great food should be accessible to everyone</strong>, delivered fresh and fast. We started as a small kitchen with big dreams, focusing on quality ingredients and exceptional service.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Today, we've grown into a trusted cloud kitchen serving thousands of satisfied customers. Our commitment remains the same - to bring you delicious, freshly prepared meals that you can enjoy in the comfort of your home.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Every dish we create is made with care, using only the finest ingredients. We believe that food brings people together, and we're honored to be part of your meals and memories.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="neomorphic rounded-3xl p-4">
+                            <div class="w-full h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop" alt="Modern Kitchen" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl opacity-20 blur-2xl"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="mb-20">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Our Journey</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">Milestones that shaped who we are today</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 dark:from-orange-900 dark:via-orange-600 dark:to-orange-900"></div>
+
+                    <div class="space-y-12">
+                        <!-- 2020 -->
+                        <div class="animate-on-scroll relative">
+                            <div class="flex flex-col md:flex-row items-start gap-8">
+                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
+                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                        2020
+                                    </div>
+                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">The Beginning</div>
+                                </div>
+                                <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">The Beginning</h3>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        We opened our doors with a mission to revolutionize food delivery. Starting with just a handful of recipes, we focused on perfecting each dish before adding it to our menu. Our passion for quality and attention to detail set the foundation for everything we do today.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2022 -->
+                        <div class="animate-on-scroll relative">
+                            <div class="flex flex-col md:flex-row items-start gap-8">
+                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
+                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                        2022
+                                    </div>
+                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">Growing Strong</div>
+                                </div>
+                                <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">Growing Strong</h3>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        Our commitment to quality paid off. We expanded our menu, improved our delivery system, and built a loyal customer base. Word of mouth helped us grow organically. We introduced new cuisines and cooking techniques while maintaining our core values of freshness and excellence.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2024 -->
+                        <div class="animate-on-scroll relative">
+                            <div class="flex flex-col md:flex-row items-start gap-8">
+                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
+                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                        2024
+                                    </div>
+                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">Today</div>
+                                </div>
+                                <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">Today</h3>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        We continue to innovate and improve. Our kitchen now serves a diverse range of cuisines, and we're constantly adding new dishes based on customer feedback. The journey continues, and we're excited about what's next. Every day, we strive to make your dining experience better.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2025 -->
+                        <div class="animate-on-scroll relative">
+                            <div class="flex flex-col md:flex-row items-start gap-8">
+                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
+                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                        2025
+                                    </div>
+                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">The Future</div>
+                                </div>
+                                <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">The Future</h3>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        Looking ahead, we're expanding our reach and innovating new ways to serve you better. We're exploring sustainable practices, introducing plant-based options, and enhancing our technology to make ordering easier than ever. The future is bright, and we're committed to being your trusted food partner.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="mb-20">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Our Values</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">What drives us every day</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Quality First -->
+                    <div class="neomorphic rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll">
+                        <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Quality First</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            We never compromise on the quality of our ingredients or preparation methods. Every dish is crafted with precision and care.
+                        </p>
+                    </div>
+
+                    <!-- Customer Focus -->
+                    <div class="neomorphic rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll">
+                        <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Customer Focus</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Your satisfaction is our priority. We listen and adapt to serve you better, making every order a delightful experience.
+                        </p>
+                    </div>
+
+                    <!-- Innovation -->
+                    <div class="neomorphic rounded-2xl p-8 text-center hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll">
+                        <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Innovation</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            We continuously improve our processes and menu to bring you the best experience, staying ahead of culinary trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="glass rounded-3xl p-12 md:p-16 text-center animate-on-scroll">
+                <div class="max-w-4xl mx-auto">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Mission</h2>
+                    <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                        To deliver exceptional food experiences that bring joy to every table, one delicious meal at a time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8 text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">CloudKitchen</h3>
+                    </div>
+                    <p class="text-gray-400">Fresh food delivered fast. Your favorite cloud kitchen for quality meals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-orange-400">About</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Operating Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Mon - Fri: 11:00 AM - 10:00 PM</li>
+                        <li>Sat - Sun: 12:00 PM - 11:00 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CloudKitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        const mobileToggle = document.getElementById('theme-toggle-mobile');
+        const mainToggle = document.getElementById('theme-toggle');
+        if (mobileToggle && mainToggle) {
+            mobileToggle.addEventListener('click', () => mainToggle.click());
+        }
+    </script>
+</body>
+</html>

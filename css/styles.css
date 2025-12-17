@@ -1,0 +1,118 @@
+/* Tailwind overrides ONLY */
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state for animated elements */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-fade-in {
+    animation: fadeInUp 500ms ease-out forwards;
+}
+
+/* Ensure smooth theme transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Neomorphism styles for food cards and buttons */
+.neomorphic {
+    background: #f0f0f0;
+    box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+}
+
+.dark .neomorphic {
+    background: #2a2a2a;
+    box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #3a3a3a;
+}
+
+.neomorphic:hover {
+    box-shadow: 4px 4px 8px #d1d1d1, -4px -4px 8px #ffffff;
+}
+
+.dark .neomorphic:hover {
+    box-shadow: 4px 4px 8px #1a1a1a, -4px -4px 8px #3a3a3a;
+}
+
+/* Glassmorphism for navbar, hero overlay, login card */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Enhanced glass for CTA sections with colored backgrounds */
+.glass.cta-glass {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dark .glass.cta-glass {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Cart items should always be visible */
+.cart-item-enter {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Additional animations for home page */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(251, 146, 60, 0.6);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hover effects for food cards */
+.food-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+}
+
+.food-card img {
+    transition: transform 0.5s ease;
+}
+
+.food-card:hover img {
+    transform: scale(1.1);
+}
+

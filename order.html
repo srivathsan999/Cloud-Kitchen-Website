@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Cloud Kitchen</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-3 text-2xl font-bold text-orange-600 dark:text-orange-400 hover:scale-105 transition-transform">
+                    <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>CloudKitchen</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                    <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <a href="login.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                </div>
+                <button id="mobile-menu-button" class="lg:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
+                <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-700 dark:text-gray-300">Theme</span>
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="cart.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Cart</a>
+                <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 px-4 relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-orange-100/50 to-transparent dark:from-orange-900/20"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-orange-200 dark:bg-orange-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-float"></div>
+        <div class="absolute bottom-20 left-10 w-72 h-72 bg-orange-300 dark:bg-orange-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 animate-float" style="animation-delay: 1.5s;"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center animate-on-scroll">
+                <div class="inline-block mb-6">
+                    <span class="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4">
+                        📦 Complete Your Order
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent">
+                    Place Your Order
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    We're almost there! Just fill in your delivery details
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column - Form -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Delivery Information -->
+                    <div class="glass rounded-3xl p-8 md:p-10 animate-on-scroll">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Delivery Information</h2>
+                        </div>
+                        <form class="space-y-6">
+                            <div class="relative">
+                                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Full Name</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Phone Number</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <input type="tel" class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="+1 (234) 567-8900" required>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Email</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <input type="email" class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Delivery Address</label>
+                                <div class="relative">
+                                    <div class="absolute top-3 left-4 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <textarea class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition resize-none" rows="3" placeholder="Street address, City, State, ZIP" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Delivery Time</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <select class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition appearance-none">
+                                            <option>As soon as possible</option>
+                                            <option>30 minutes</option>
+                                            <option>1 hour</option>
+                                            <option>2 hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative">
+                                    <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Payment Method</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                            </svg>
+                                        </div>
+                                        <select class="w-full pl-12 pr-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition appearance-none">
+                                            <option>Credit/Debit Card</option>
+                                            <option>Cash on Delivery</option>
+                                            <option>PayPal</option>
+                                            <option>Google Pay</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">Special Instructions</label>
+                                <textarea class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition resize-none" rows="3" placeholder="Any special requests or instructions (optional)"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="glass rounded-3xl p-8 animate-on-scroll">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Order Summary</h2>
+                            </div>
+                            
+                            <!-- Order Items -->
+                            <div id="order-items" class="space-y-4 mb-6 max-h-64 overflow-y-auto">
+                                <!-- Items will be dynamically loaded from cart -->
+                            </div>
+                            
+                            <!-- Order Totals -->
+                            <div class="space-y-4 pt-6 border-t-2 border-gray-200 dark:border-gray-700">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 dark:text-gray-300">Subtotal</span>
+                                    <span id="order-subtotal" class="font-semibold text-gray-900 dark:text-white">$0.00</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 dark:text-gray-300">Delivery Fee</span>
+                                    <span id="order-delivery-fee" class="font-semibold text-gray-900 dark:text-white">$0.00</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-700 dark:text-gray-300">Tax</span>
+                                    <span id="order-tax" class="font-semibold text-gray-900 dark:text-white">$0.00</span>
+                                </div>
+                                <div class="border-t-2 border-gray-300 dark:border-gray-600 pt-4 mt-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-gray-900 dark:text-white">Total</span>
+                                        <span id="order-total" class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">$0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button id="place-order-btn" class="w-full mt-8 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white py-4 rounded-xl text-lg font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" disabled>
+                                <span class="flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Place Order
+                                </span>
+                            </button>
+                            
+                            <a href="cart.html" class="block w-full text-center text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 py-3 font-medium transition mt-4">
+                                ← Back to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-12 px-4 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-8 h-8 text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-white">CloudKitchen</h3>
+                    </div>
+                    <p class="text-gray-400">Fresh food delivered fast. Your favorite cloud kitchen for quality meals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-orange-400">Home</a></li>
+                        <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
+                        <li><a href="about.html" class="hover:text-orange-400">About</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Operating Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Mon - Fri: 11:00 AM - 10:00 PM</li>
+                        <li>Sat - Sun: 12:00 PM - 11:00 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Facebook</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Instagram</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-400">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CloudKitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        const mobileToggle = document.getElementById('theme-toggle-mobile');
+        const mainToggle = document.getElementById('theme-toggle');
+        if (mobileToggle && mainToggle) {
+            mobileToggle.addEventListener('click', () => mainToggle.click());
+        }
+
+        // Load order items from cart
+        function loadOrderSummary() {
+            const cart = window.cartManager ? window.cartManager.getCart() : [];
+            const orderItemsContainer = document.getElementById('order-items');
+            const placeOrderBtn = document.getElementById('place-order-btn');
+            
+            if (!orderItemsContainer) return;
+
+            // Clear existing items
+            orderItemsContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                orderItemsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">Your cart is empty</p>';
+                if (placeOrderBtn) placeOrderBtn.disabled = true;
+                updateOrderTotals(0, 0, 0);
+                return;
+            }
+
+            if (placeOrderBtn) placeOrderBtn.disabled = false;
+
+            // Render each cart item
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700';
+                itemElement.innerHTML = `
+                    <div>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">${item.name}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Quantity: ${item.quantity}</p>
+                    </div>
+                    <span class="font-semibold text-gray-900 dark:text-white">$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                orderItemsContainer.appendChild(itemElement);
+            });
+
+            // Calculate totals
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.08; // 8% tax
+            const deliveryFee = subtotal > 0 ? 2.99 : 0;
+            updateOrderTotals(subtotal, tax, deliveryFee);
+        }
+
+        function updateOrderTotals(subtotal, tax, deliveryFee) {
+            const total = subtotal + tax + deliveryFee;
+            
+            const subtotalEl = document.getElementById('order-subtotal');
+            const taxEl = document.getElementById('order-tax');
+            const deliveryFeeEl = document.getElementById('order-delivery-fee');
+            const totalEl = document.getElementById('order-total');
+
+            if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            if (taxEl) taxEl.textContent = `$${tax.toFixed(2)}`;
+            if (deliveryFeeEl) deliveryFeeEl.textContent = `$${deliveryFee.toFixed(2)}`;
+            if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Place order button handler
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOrderSummary();
+            
+            const placeOrderBtn = document.getElementById('place-order-btn');
+            if (placeOrderBtn) {
+                placeOrderBtn.addEventListener('click', () => {
+                    const cart = window.cartManager ? window.cartManager.getCart() : [];
+                    if (cart.length === 0) {
+                        alert('Your cart is empty!');
+                        return;
+                    }
+                    // Here you would typically submit the order to a server
+                    alert('Order placed successfully! Thank you for your order.');
+                    // Clear cart and redirect
+                    if (window.cartManager) {
+                        cart.forEach(item => {
+                            window.cartManager.removeFromCart(item.name);
+                        });
+                    }
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
