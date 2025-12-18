@@ -23,7 +23,7 @@
     function updateCartCount() {
         const cart = getCart();
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const cartCountElements = document.querySelectorAll('#cart-count');
+        const cartCountElements = document.querySelectorAll('#cart-count, #cart-count-mobile');
         cartCountElements.forEach(el => {
             if (totalItems > 0) {
                 el.textContent = totalItems;

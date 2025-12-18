@@ -57,20 +57,26 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800">
-            <div class="px-4 py-4 space-y-3">
+            <div class="px-4 py-4 space-y-3 text-center">
                 <a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Home</a>
                 <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
                 <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
                 <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
-                <div class="flex items-center justify-between">
-                    <span class="text-gray-700 dark:text-gray-300">Theme</span>
+                <div class="flex items-center justify-center">
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
                 </div>
-                <a href="cart.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Cart</a>
+                <div class="flex items-center justify-center">
+                    <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cart-count-mobile" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </a>
+                </div>
                 <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
             </div>
         </div>
@@ -325,7 +331,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 CloudKitchen. All rights reserved.</p>
+                <p>&copy; 2025 CloudKitchen. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -334,12 +340,5 @@
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cart.js"></script>
-    <script>
-        const mobileToggle = document.getElementById('theme-toggle-mobile');
-        const mainToggle = document.getElementById('theme-toggle');
-        if (mobileToggle && mainToggle) {
-            mobileToggle.addEventListener('click', () => mainToggle.click());
-        }
-    </script>
 </body>
 </html>

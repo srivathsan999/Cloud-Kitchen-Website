@@ -20,7 +20,12 @@
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        // Don't close if clicking inside menu, menu button, or theme toggle button
+        if (mobileMenu && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenuButton.contains(e.target) &&
+            !(themeToggleMobile && themeToggleMobile.contains(e.target))) {
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }

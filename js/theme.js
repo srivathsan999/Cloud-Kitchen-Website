@@ -45,11 +45,17 @@
 
     // Toggle theme on button click
     if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleTheme();
+        });
     }
     
     if (themeToggleMobile) {
-        themeToggleMobile.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleTheme();
+        });
     }
 })();
 
