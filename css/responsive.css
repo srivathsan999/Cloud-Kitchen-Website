@@ -454,15 +454,26 @@ html, body {
     }
 
     /* Food card button adjustments */
+    /* REMOVED to allow side-by-side layout for quantity controls */
+    /*
     .food-card .flex.items-center.justify-between {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 1rem !important;
     }
+    */
 
     .food-card button,
     .menu-item button {
         width: 100% !important;
+    }
+
+    /* Quantity control buttons should NOT be full width */
+    .food-card .decrease-qty-btn,
+    .food-card .increase-qty-btn,
+    .menu-item .decrease-qty-btn,
+    .menu-item .increase-qty-btn {
+        width: 2.5rem !important;
     }
 
     /* Form adjustments */
@@ -473,7 +484,13 @@ html, body {
     select {
         font-size: 1rem !important;
         padding: 0.75rem !important;
+        padding-left: 3rem !important; /* Ensure space for the icon */
         width: 100% !important;
+    }
+
+    /* Prevent checkbox wrapping */
+    .checkbox-wrapper {
+        flex-wrap: nowrap !important;
     }
 
     /* Grid in forms */

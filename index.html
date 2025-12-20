@@ -39,6 +39,7 @@
                     <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
                     <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
                     <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="faq.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                     <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -50,7 +51,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
-                    <a href="login.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                    <div class="flex items-center gap-3">
+                        <a href="login.html" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                        <a href="signup.html" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                    </div>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -69,6 +73,7 @@
                 <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
                 <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
                 <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <a href="faq.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                 <div class="flex items-center justify-center">
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +89,10 @@
                         <span id="cart-count-mobile" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </a>
                 </div>
-                <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                <div class="flex flex-col gap-3">
+                    <a href="login.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                    <a href="signup.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -110,13 +118,13 @@
                     Experience the best cloud kitchen in town. Order now and taste the difference with our freshly prepared meals.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="menu.html" class="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg animate-pulse-glow">
+                    <a href="menu.html" class="group w-1/2 sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white px-4 sm:px-8 py-4 rounded-xl text-base sm:text-lg font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg animate-pulse-glow text-center">
                         <span>Order Now</span>
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                     </a>
-                    <a href="menu.html" class="inline-flex items-center gap-2 glass px-8 py-4 rounded-xl text-lg font-semibold text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <a href="menu.html" class="w-1/2 sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white px-4 sm:px-8 py-4 rounded-xl text-base sm:text-lg font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg text-center">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -352,6 +360,7 @@
                         <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
                         <li><a href="about.html" class="hover:text-orange-400">About</a></li>
                         <li><a href="contact.html" class="hover:text-orange-400">Contact</a></li>
+                        <li><a href="faq.html" class="hover:text-orange-400">FAQ</a></li>
                     </ul>
                 </div>
                 <div>

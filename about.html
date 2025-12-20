@@ -16,6 +16,26 @@
     <link rel="stylesheet" href="css/responsive.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        @keyframes dotted-line {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 16px;
+            }
+        }
+        
+        .animated-dotted-line {
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 10px
+            );
+            animation: dotted-line 1s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
@@ -36,6 +56,7 @@
                     <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
                     <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
                     <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="faq.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                     <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -47,7 +68,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
-                    <a href="login.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                    <div class="flex items-center gap-3">
+                        <a href="login.html" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                        <a href="signup.html" class="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                    </div>
                 </div>
                 <button id="mobile-menu-button" class="lg:hidden p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,6 +86,7 @@
                 <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
                 <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
                 <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <a href="faq.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                 <div class="flex items-center justify-center">
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -77,7 +102,10 @@
                         <span id="cart-count-mobile" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </a>
                 </div>
-                <a href="login.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Login</a>
+                <div class="flex flex-col gap-3">
+                    <a href="login.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                    <a href="signup.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -144,22 +172,25 @@
                     <p class="text-xl text-gray-600 dark:text-gray-400">Milestones that shaped who we are today</p>
                 </div>
 
-                <div class="relative">
-                    <!-- Timeline Line -->
-                    <div class="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-200 via-orange-400 to-orange-200 dark:from-orange-900 dark:via-orange-600 dark:to-orange-900"></div>
+                <div class="max-w-5xl mx-auto relative">
+                    <!-- Vertical Dotted Line - positioned between year badges and content -->
+                    <div class="hidden md:block absolute left-[12rem] top-0 bottom-0 w-0.5 z-0">
+                        <div class="h-full animated-dotted-line text-orange-500 dark:text-orange-500 opacity-40"></div>
+                    </div>
 
-                    <div class="space-y-12">
+                    <div class="space-y-16 relative z-10">
                         <!-- 2020 -->
                         <div class="animate-on-scroll relative">
-                            <div class="flex flex-col md:flex-row items-start gap-8">
-                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
-                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                                <!-- Year Badge -->
+                                <div class="flex-shrink-0 w-full md:w-48 flex flex-col items-center md:items-start">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-xl mb-3">
                                         2020
                                     </div>
-                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">The Beginning</div>
+                                    <h3 class="text-2xl font-bold text-orange-600 dark:text-orange-400 text-center md:text-left min-h-[3rem]">The Beginning</h3>
                                 </div>
+                                <!-- Content Card -->
                                 <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">The Beginning</h3>
                                     <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                         We opened our doors with a mission to revolutionize food delivery. Starting with just a handful of recipes, we focused on perfecting each dish before adding it to our menu. Our passion for quality and attention to detail set the foundation for everything we do today.
                                     </p>
@@ -169,15 +200,16 @@
 
                         <!-- 2022 -->
                         <div class="animate-on-scroll relative">
-                            <div class="flex flex-col md:flex-row items-start gap-8">
-                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
-                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                                <!-- Year Badge -->
+                                <div class="flex-shrink-0 w-full md:w-48 flex flex-col items-center md:items-start">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-xl mb-3">
                                         2022
                                     </div>
-                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">Growing Strong</div>
+                                    <h3 class="text-2xl font-bold text-orange-600 dark:text-orange-400 text-center md:text-left min-h-[3rem]">Growing Strong</h3>
                                 </div>
+                                <!-- Content Card -->
                                 <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">Growing Strong</h3>
                                     <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                         Our commitment to quality paid off. We expanded our menu, improved our delivery system, and built a loyal customer base. Word of mouth helped us grow organically. We introduced new cuisines and cooking techniques while maintaining our core values of freshness and excellence.
                                     </p>
@@ -187,15 +219,16 @@
 
                         <!-- 2024 -->
                         <div class="animate-on-scroll relative">
-                            <div class="flex flex-col md:flex-row items-start gap-8">
-                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
-                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                                <!-- Year Badge -->
+                                <div class="flex-shrink-0 w-full md:w-48 flex flex-col items-center md:items-start">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-xl mb-3">
                                         2024
                                     </div>
-                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">Today</div>
+                                    <h3 class="text-2xl font-bold text-orange-600 dark:text-orange-400 text-center md:text-left min-h-[3rem]">Today</h3>
                                 </div>
+                                <!-- Content Card -->
                                 <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">Today</h3>
                                     <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                         We continue to innovate and improve. Our kitchen now serves a diverse range of cuisines, and we're constantly adding new dishes based on customer feedback. The journey continues, and we're excited about what's next. Every day, we strive to make your dining experience better.
                                     </p>
@@ -205,15 +238,16 @@
 
                         <!-- 2025 -->
                         <div class="animate-on-scroll relative">
-                            <div class="flex flex-col md:flex-row items-start gap-8">
-                                <div class="flex-shrink-0 w-full md:w-auto flex items-center gap-4 md:flex-col md:items-start">
-                                    <div class="relative z-10 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                                <!-- Year Badge -->
+                                <div class="flex-shrink-0 w-full md:w-48 flex flex-col items-center md:items-start">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-xl mb-3">
                                         2025
                                     </div>
-                                    <div class="hidden md:block text-2xl font-bold text-orange-600 dark:text-orange-400 mt-2">The Future</div>
+                                    <h3 class="text-2xl font-bold text-orange-600 dark:text-orange-400 text-center md:text-left min-h-[3rem]">The Future</h3>
                                 </div>
+                                <!-- Content Card -->
                                 <div class="flex-1 glass rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                                    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white md:hidden">The Future</h3>
                                     <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                                         Looking ahead, we're expanding our reach and innovating new ways to serve you better. We're exploring sustainable practices, introducing plant-based options, and enhancing our technology to make ordering easier than ever. The future is bright, and we're committed to being your trusted food partner.
                                     </p>
@@ -312,6 +346,7 @@
                         <li><a href="menu.html" class="hover:text-orange-400">Menu</a></li>
                         <li><a href="about.html" class="hover:text-orange-400">About</a></li>
                         <li><a href="contact.html" class="hover:text-orange-400">Contact</a></li>
+                        <li><a href="faq.html" class="hover:text-orange-400">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
