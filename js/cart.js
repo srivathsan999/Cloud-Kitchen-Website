@@ -241,14 +241,14 @@
                 
                 // Replace button with quantity controls
                 addToCartBtn.outerHTML = `
-                    <div class="flex items-center gap-3">
-                        <button class="decrease-qty-btn w-10 h-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition transform hover:scale-110 flex items-center justify-center" data-name="${name}">
+                    <div class="flex items-center gap-3 flex-nowrap">
+                        <button class="decrease-qty-btn w-10 h-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition transform hover:scale-110 flex items-center justify-center flex-shrink-0" data-name="${name}">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                             </svg>
                         </button>
-                        <span class="quantity-display w-12 text-center font-bold text-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-xl py-2" data-name="${name}">${item.quantity}</span>
-                        <button class="increase-qty-btn w-10 h-10 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-110 flex items-center justify-center shadow-lg" data-name="${name}" data-price="${price}" data-image="${image}" data-description="${description}">
+                        <span class="quantity-display w-12 text-center font-bold text-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-xl py-2 flex-shrink-0" data-name="${name}">${item.quantity}</span>
+                        <button class="increase-qty-btn w-10 h-10 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-110 flex items-center justify-center shadow-lg flex-shrink-0" data-name="${name}" data-price="${price}" data-image="${image}" data-description="${description}">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                             </svg>
@@ -302,14 +302,14 @@
 
             // Replace button with quantity controls
             button.outerHTML = `
-                <div class="flex items-center gap-3">
-                    <button class="decrease-qty-btn w-10 h-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition transform hover:scale-110 flex items-center justify-center" data-name="${name}">
+                <div class="flex items-center gap-3 flex-nowrap">
+                    <button class="decrease-qty-btn w-10 h-10 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition transform hover:scale-110 flex items-center justify-center flex-shrink-0" data-name="${name}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                         </svg>
                     </button>
-                    <span class="quantity-display w-12 text-center font-bold text-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-xl py-2" data-name="${name}">${quantity}</span>
-                    <button class="increase-qty-btn w-10 h-10 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-110 flex items-center justify-center shadow-lg" data-name="${name}" data-price="${price}" data-image="${image}" data-description="${description}">
+                    <span class="quantity-display w-12 text-center font-bold text-lg text-gray-900 dark:text-white bg-white dark:bg-gray-800 rounded-xl py-2 flex-shrink-0" data-name="${name}">${quantity}</span>
+                    <button class="increase-qty-btn w-10 h-10 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white rounded-xl font-bold hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-110 flex items-center justify-center shadow-lg flex-shrink-0" data-name="${name}" data-price="${price}" data-image="${image}" data-description="${description}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
