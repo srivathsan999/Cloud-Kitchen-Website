@@ -31,5 +31,31 @@
             }
         }
     });
+
+    // Mobile Home Dropdown Toggle
+    const mobileHomeDropdownToggle = document.getElementById('mobile-home-dropdown-toggle');
+    const mobileHomeDropdown = document.getElementById('mobile-home-dropdown');
+    const mobileHomeDropdownIcon = document.getElementById('mobile-home-dropdown-icon');
+
+    if (mobileHomeDropdownToggle && mobileHomeDropdown && mobileHomeDropdownIcon) {
+        mobileHomeDropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileHomeDropdown.classList.toggle('hidden');
+            mobileHomeDropdownIcon.classList.toggle('rotate-180');
+        });
+    }
+
+    // Mobile Dashboard Dropdown Toggle
+    const mobileDashboardDropdownToggle = document.getElementById('mobile-dashboard-dropdown-toggle');
+    const mobileDashboardDropdown = document.getElementById('mobile-dashboard-dropdown');
+    const mobileDashboardDropdownIcon = document.getElementById('mobile-dashboard-dropdown-icon');
+
+    if (mobileDashboardDropdownToggle && mobileDashboardDropdown && mobileDashboardDropdownIcon) {
+        mobileDashboardDropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileDashboardDropdown.classList.toggle('hidden');
+            mobileDashboardDropdownIcon.classList.toggle('rotate-180');
+        });
+    }
 })();
 
