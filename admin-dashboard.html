@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,60 +16,81 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
+
+<body
+    class="bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100">
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 glass border-r border-gray-200 dark:border-gray-800 transform transition-transform duration-300 -translate-x-full md:translate-x-0 flex flex-col">
+    <aside id="sidebar"
+        class="fixed inset-y-0 left-0 z-50 w-64 glass border-r border-gray-200 dark:border-gray-800 transform transition-transform duration-300 -translate-x-full lg:translate-x-0 flex flex-col">
         <div class="h-16 flex items-center justify-center border-b border-gray-200 dark:border-gray-800">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-orange-600 dark:text-orange-400">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+            <a href="index.html"
+                class="flex items-center gap-2 text-2xl font-bold text-orange-600 dark:text-orange-400">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2" />
                 </svg>
                 <span>CloudKitchen</span>
             </a>
         </div>
-        
+
         <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
-            <a href="#" class="flex items-center gap-3 px-3 py-2 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-lg font-medium transition">
+            <a href="#"
+                class="flex items-center gap-3 px-3 py-2 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="#" class="view-all-orders-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
+            <a href="#"
+                class="view-all-orders-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
                 <span>Orders</span>
             </a>
-            <a href="#" class="add-menu-item-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
+            <a href="#"
+                class="add-menu-item-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
                 <span>Menu</span>
             </a>
-            <a href="#" class="manage-customers-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
+            <a href="#"
+                class="manage-customers-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
                 <span>Customers</span>
             </a>
-            <a href="#" class="view-analytics-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
+            <a href="#"
+                class="view-analytics-btn flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
                 <span>Analytics</span>
             </a>
         </nav>
-        
+
         <div class="p-4 border-t border-gray-200 dark:border-gray-800">
-            <button id="sidebar-logout-btn" class="flex items-center gap-3 px-3 py-2 w-full text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg font-medium transition">
+            <button id="sidebar-logout-btn"
+                class="flex items-center gap-3 px-3 py-2 w-full text-left text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg font-medium transition">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
                 <span>Logout</span>
             </button>
@@ -76,341 +98,438 @@
     </aside>
 
     <!-- Header (Mobile Only) -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800 md:hidden">
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800 lg:hidden">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-3">
-                    <button id="sidebar-toggle" class="p-2 -ml-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
+                    <button id="sidebar-toggle"
+                        class="p-2 -ml-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
-                    <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-orange-600 dark:text-orange-400">
-                        <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                    <a href="index.html"
+                        class="flex items-center gap-2 text-2xl font-bold text-orange-600 dark:text-orange-400">
+                        <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2" />
                         </svg>
                         <span>CloudKitchen</span>
                     </a>
                 </div>
-                <button id="logout-btn" class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                    </svg>
-                </button>
+
             </div>
         </div>
     </header>
 
-    <main class="pt-16 md:pt-0 md:ml-64 transition-all duration-300">
+    <main class="pt-16 lg:pt-0 lg:ml-64 transition-all duration-300">
 
-    <!-- Dashboard Header -->
-    <section class="pt-24 pb-12 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 dark:from-purple-900/20 dark:to-pink-900/20"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                        Admin Dashboard
-                    </h1>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg">Manage orders, menu, customers, and analytics</p>
+        <!-- Dashboard Header -->
+        <section class="pt-10 pb-6 px-4 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50 dark:from-purple-900/20 dark:to-pink-900/20">
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div>
+                        <h1
+                            class="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+                            Admin Dashboard
+                        </h1>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg">Manage orders, menu, customers, and
+                            analytics</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="glass rounded-xl px-6 py-3">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white">Admin</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">admin@cloudkitchen.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <div class="glass rounded-xl px-6 py-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+            </div>
+        </section>
+
+        <!-- Dashboard Content -->
+        <section class="py-8 px-4">
+            <div class="max-w-7xl mx-auto">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Revenue -->
+                    <div
+                        class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <div>
-                                <p class="font-semibold text-gray-900 dark:text-white">Admin</p>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">admin@cloudkitchen.com</p>
+                            <span class="text-2xl font-bold text-green-600 dark:text-green-400">$12,450</span>
+                        </div>
+                        <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Total Revenue</h3>
+                        <p class="text-xs text-green-600 dark:text-green-400 mt-1">+12.5% from last month</p>
+                    </div>
+
+                    <!-- Total Orders -->
+                    <div
+                        class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
                             </div>
+                            <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">1,247</span>
                         </div>
+                        <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Total Orders</h3>
+                        <p class="text-xs text-blue-600 dark:text-blue-400 mt-1">+8.2% from last month</p>
+                    </div>
+
+                    <!-- Active Customers -->
+                    <div
+                        class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">892</span>
+                        </div>
+                        <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Active Customers</h3>
+                        <p class="text-xs text-purple-600 dark:text-purple-400 mt-1">+15.3% from last month</p>
+                    </div>
+
+                    <!-- Pending Orders -->
+                    <div
+                        class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="text-2xl font-bold text-orange-600 dark:text-orange-400">23</span>
+                        </div>
+                        <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Pending Orders</h3>
+                        <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Requires attention</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Dashboard Content -->
-    <section class="py-8 px-4">
-        <div class="max-w-7xl mx-auto">
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <!-- Total Revenue -->
-                <div class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold text-green-600 dark:text-green-400">$12,450</span>
-                    </div>
-                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Total Revenue</h3>
-                    <p class="text-xs text-green-600 dark:text-green-400 mt-1">+12.5% from last month</p>
-                </div>
-
-                <!-- Total Orders -->
-                <div class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">1,247</span>
-                    </div>
-                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Total Orders</h3>
-                    <p class="text-xs text-blue-600 dark:text-blue-400 mt-1">+8.2% from last month</p>
-                </div>
-
-                <!-- Active Customers -->
-                <div class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">892</span>
-                    </div>
-                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Active Customers</h3>
-                    <p class="text-xs text-purple-600 dark:text-purple-400 mt-1">+15.3% from last month</p>
-                </div>
-
-                <!-- Pending Orders -->
-                <div class="glass rounded-2xl p-6 hover:shadow-xl transition-all transform hover:-translate-y-1 animate-on-scroll">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold text-orange-600 dark:text-orange-400">23</span>
-                    </div>
-                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-semibold">Pending Orders</h3>
-                    <p class="text-xs text-orange-600 dark:text-orange-400 mt-1">Requires attention</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Recent Orders -->
-                <div class="lg:col-span-2">
-                    <div class="glass rounded-2xl p-6 animate-on-scroll mb-6">
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Recent Orders</h2>
-                            <a href="#" class="view-all-orders-btn text-orange-600 dark:text-orange-400 hover:underline text-sm font-semibold">View All</a>
-                        </div>
-                        <div class="space-y-4">
-                            <!-- Order 1 -->
-                            <div class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 rounded-full text-xs font-semibold">Preparing</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-045</span>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Recent Orders -->
+                    <div class="lg:col-span-2">
+                        <div class="glass rounded-2xl p-6 animate-on-scroll mb-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Recent Orders</h2>
+                                <a href="#"
+                                    class="view-all-orders-btn text-orange-600 dark:text-orange-400 hover:underline text-sm font-semibold">View
+                                    All</a>
+                            </div>
+                            <div class="space-y-4">
+                                <!-- Order 1 -->
+                                <div
+                                    class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+                                    <div
+                                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <span
+                                                    class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 rounded-full text-xs font-semibold">Preparing</span>
+                                                <span
+                                                    class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-045</span>
+                                            </div>
+                                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">John Doe</h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Classic Burger x2, Fries
+                                                x1 • $24.98</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 16,
+                                                2025 2:30 PM</p>
                                         </div>
-                                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1">John Doe</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Classic Burger x2, Fries x1 • $24.98</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 16, 2025 2:30 PM</p>
+                                        <div class="flex gap-2">
+                                            <button
+                                                class="accept-order-btn px-4 py-2 bg-green-600 dark:bg-green-500 text-white rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition text-sm"
+                                                data-order-id="#ORD-2025-045">
+                                                Accept
+                                            </button>
+                                            <button
+                                                class="reject-order-btn px-4 py-2 bg-red-600 dark:bg-red-500 text-white rounded-lg font-semibold hover:bg-red-700 dark:hover:bg-red-600 transition text-sm"
+                                                data-order-id="#ORD-2025-045">
+                                                Reject
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="flex gap-2">
-                                        <button class="accept-order-btn px-4 py-2 bg-green-600 dark:bg-green-500 text-white rounded-lg font-semibold hover:bg-green-700 dark:hover:bg-green-600 transition text-sm" data-order-id="#ORD-2025-045">
-                                            Accept
+                                </div>
+
+                                <!-- Order 2 -->
+                                <div
+                                    class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+                                    <div
+                                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <span
+                                                    class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-xs font-semibold">On
+                                                    the Way</span>
+                                                <span
+                                                    class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-044</span>
+                                            </div>
+                                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Jane Smith</h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Pasta x2, Garlic Bread
+                                                x1 • $28.97</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 16,
+                                                2025 1:15 PM</p>
+                                        </div>
+                                        <button
+                                            class="track-btn px-4 py-2 bg-purple-600 dark:bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-700 dark:hover:bg-purple-600 transition text-sm"
+                                            data-order-id="#ORD-2025-044">
+                                            Track
                                         </button>
-                                        <button class="reject-order-btn px-4 py-2 bg-red-600 dark:bg-red-500 text-white rounded-lg font-semibold hover:bg-red-700 dark:hover:bg-red-600 transition text-sm" data-order-id="#ORD-2025-045">
-                                            Reject
+                                    </div>
+                                </div>
+
+                                <!-- Order 3 -->
+                                <div
+                                    class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+                                    <div
+                                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <span
+                                                    class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-semibold">Delivered</span>
+                                                <span
+                                                    class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-043</span>
+                                            </div>
+                                            <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Mike Johnson
+                                            </h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Grilled Chicken x1,
+                                                Salad x1 • $19.98</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 15,
+                                                2025 6:45 PM</p>
+                                        </div>
+                                        <button
+                                            class="view-order-btn px-4 py-2 bg-gray-600 dark:bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-700 dark:hover:bg-gray-600 transition text-sm"
+                                            data-order-id="#ORD-2025-043">
+                                            View
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Order 2 -->
-                            <div class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-xs font-semibold">On the Way</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-044</span>
-                                        </div>
-                                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Jane Smith</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Pasta x2, Garlic Bread x1 • $28.97</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 16, 2025 1:15 PM</p>
-                                    </div>
-                                    <button class="track-btn px-4 py-2 bg-purple-600 dark:bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-700 dark:hover:bg-purple-600 transition text-sm" data-order-id="#ORD-2025-044">
-                                        Track
-                                    </button>
-                                </div>
+                        <!-- Menu Management -->
+                        <div class="glass rounded-2xl p-6 animate-on-scroll">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Menu Management</h2>
+                                <button
+                                    class="add-menu-item-btn px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition">
+                                    + Add Item
+                                </button>
                             </div>
-
-                            <!-- Order 3 -->
-                            <div class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-semibold">Delivered</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400">#ORD-2025-043</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div
+                                    class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 dark:text-white">Classic Burger</h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">$12.99 • 45 orders</p>
                                         </div>
-                                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1">Mike Johnson</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">Grilled Chicken x1, Salad x1 • $19.98</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">Ordered: Jan 15, 2025 6:45 PM</p>
+                                        <div class="flex gap-2">
+                                            <button
+                                                class="edit-menu-item-btn p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition"
+                                                data-item-name="Classic Burger" data-item-price="$12.99 • 45 orders">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </button>
+                                            <button
+                                                class="delete-menu-item-btn p-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition"
+                                                data-item-name="Classic Burger">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button class="view-order-btn px-4 py-2 bg-gray-600 dark:bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-700 dark:hover:bg-gray-600 transition text-sm" data-order-id="#ORD-2025-043">
-                                        View
-                                    </button>
+                                </div>
+                                <div
+                                    class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 dark:text-white">Grilled Chicken</h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">$14.99 • 32 orders</p>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button
+                                                class="edit-menu-item-btn p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition"
+                                                data-item-name="Grilled Chicken" data-item-price="$14.99 • 32 orders">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </button>
+                                            <button
+                                                class="delete-menu-item-btn p-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition"
+                                                data-item-name="Grilled Chicken">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Menu Management -->
-                    <div class="glass rounded-2xl p-6 animate-on-scroll">
-                        <div class="flex items-center justify-between mb-6">
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Menu Management</h2>
-                            <button class="add-menu-item-btn px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition">
-                                + Add Item
-                            </button>
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Quick Actions -->
+                        <div class="glass rounded-2xl p-6 animate-on-scroll">
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h2>
+                            <div class="space-y-3">
+                                <a href="menu.html"
+                                    class="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-800/20 rounded-xl hover:shadow-lg transition">
+                                    <div
+                                        class="w-10 h-10 bg-purple-600 dark:bg-purple-500 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white">Add Menu Item</span>
+                                </a>
+                                <a href="#"
+                                    class="manage-customers-btn flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-800/20 rounded-xl hover:shadow-lg transition">
+                                    <div
+                                        class="w-10 h-10 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white">Manage Customers</span>
+                                </a>
+                                <a href="#"
+                                    class="view-analytics-btn flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-800/20 rounded-xl hover:shadow-lg transition">
+                                    <div
+                                        class="w-10 h-10 bg-green-600 dark:bg-green-500 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white">View Analytics</span>
+                                </a>
+                                <a href="#"
+                                    class="settings-btn flex items-center gap-3 p-3 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-800/20 rounded-xl hover:shadow-lg transition">
+                                    <div
+                                        class="w-10 h-10 bg-orange-600 dark:bg-orange-500 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white">Settings</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
+
+                        <!-- Top Customers -->
+                        <div class="glass rounded-2xl p-6 animate-on-scroll">
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Top Customers</h2>
+                            <div class="space-y-4">
                                 <div class="flex items-center justify-between">
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 dark:text-white">Classic Burger</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">$12.99 • 45 orders</p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                            <span class="text-white font-bold text-sm">JD</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white text-sm">John Doe</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">12 orders</p>
+                                        </div>
                                     </div>
-                                    <div class="flex gap-2">
-                                        <button class="edit-menu-item-btn p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition" data-item-name="Classic Burger" data-item-price="$12.99 • 45 orders">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                            </svg>
-                                        </button>
-                                        <button class="delete-menu-item-btn p-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition" data-item-name="Classic Burger">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
+                                    <span class="text-sm font-bold text-green-600 dark:text-green-400">$487</span>
                                 </div>
-                            </div>
-                            <div class="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4 hover:border-purple-400 dark:hover:border-purple-600 transition">
                                 <div class="flex items-center justify-between">
-                                    <div>
-                                        <h3 class="font-semibold text-gray-900 dark:text-white">Grilled Chicken</h3>
-                                        <p class="text-sm text-gray-600 dark:text-gray-400">$14.99 • 32 orders</p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center">
+                                            <span class="text-white font-bold text-sm">JS</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Jane Smith
+                                            </p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">8 orders</p>
+                                        </div>
                                     </div>
-                                    <div class="flex gap-2">
-                                        <button class="edit-menu-item-btn p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition" data-item-name="Grilled Chicken" data-item-price="$14.99 • 32 orders">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                            </svg>
-                                        </button>
-                                        <button class="delete-menu-item-btn p-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition" data-item-name="Grilled Chicken">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </button>
+                                    <span class="text-sm font-bold text-green-600 dark:text-green-400">$312</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center">
+                                            <span class="text-white font-bold text-sm">MJ</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Mike Johnson
+                                            </p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">6 orders</p>
+                                        </div>
                                     </div>
+                                    <span class="text-sm font-bold text-green-600 dark:text-green-400">$198</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sidebar -->
-                <div class="space-y-6">
-                    <!-- Quick Actions -->
-                    <div class="glass rounded-2xl p-6 animate-on-scroll">
-                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Actions</h2>
-                        <div class="space-y-3">
-                            <a href="menu.html" class="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-800/20 rounded-xl hover:shadow-lg transition">
-                                <div class="w-10 h-10 bg-purple-600 dark:bg-purple-500 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                    </svg>
-                                </div>
-                                <span class="font-semibold text-gray-900 dark:text-white">Add Menu Item</span>
-                            </a>
-                            <a href="#" class="manage-customers-btn flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-800/20 rounded-xl hover:shadow-lg transition">
-                                <div class="w-10 h-10 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
-                                </div>
-                                <span class="font-semibold text-gray-900 dark:text-white">Manage Customers</span>
-                            </a>
-                            <a href="#" class="view-analytics-btn flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-800/20 rounded-xl hover:shadow-lg transition">
-                                <div class="w-10 h-10 bg-green-600 dark:bg-green-500 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                    </svg>
-                                </div>
-                                <span class="font-semibold text-gray-900 dark:text-white">View Analytics</span>
-                            </a>
-                            <a href="#" class="settings-btn flex items-center gap-3 p-3 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-800/20 rounded-xl hover:shadow-lg transition">
-                                <div class="w-10 h-10 bg-orange-600 dark:bg-orange-500 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </div>
-                                <span class="font-semibold text-gray-900 dark:text-white">Settings</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Top Customers -->
-                    <div class="glass rounded-2xl p-6 animate-on-scroll">
-                        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Top Customers</h2>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                                        <span class="text-white font-bold text-sm">JD</span>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-900 dark:text-white text-sm">John Doe</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">12 orders</p>
-                                    </div>
-                                </div>
-                                <span class="text-sm font-bold text-green-600 dark:text-green-400">$487</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center">
-                                        <span class="text-white font-bold text-sm">JS</span>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-900 dark:text-white text-sm">Jane Smith</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">8 orders</p>
-                                    </div>
-                                </div>
-                                <span class="text-sm font-bold text-green-600 dark:text-green-400">$312</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center">
-                                        <span class="text-white font-bold text-sm">MJ</span>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-900 dark:text-white text-sm">Mike Johnson</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">6 orders</p>
-                                    </div>
-                                </div>
-                                <span class="text-sm font-bold text-green-600 dark:text-green-400">$198</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="js/theme.js"></script>
-    <script src="js/animations.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/animations.js"></script>
     </main>
     <script src="js/dashboard.js"></script>
     <script>
@@ -420,10 +539,10 @@
         }
 
         const logoutBtn = document.getElementById('logout-btn');
-        if(logoutBtn) logoutBtn.addEventListener('click', handleLogout);
+        if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
 
         const sidebarLogoutBtn = document.getElementById('sidebar-logout-btn');
-        if(sidebarLogoutBtn) sidebarLogoutBtn.addEventListener('click', handleLogout);
+        if (sidebarLogoutBtn) sidebarLogoutBtn.addEventListener('click', handleLogout);
 
         // Sidebar Toggle
         const sidebar = document.getElementById('sidebar');
@@ -445,5 +564,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>

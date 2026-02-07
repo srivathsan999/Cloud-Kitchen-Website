@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Kitchen - Order Fresh Food Now</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,103 +17,145 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         @keyframes slideInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .animate-slide-in {
             animation: slideInUp 0.6s ease-out;
         }
+
         .gradient-mesh {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
         }
+
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
     </style>
 </head>
+
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3 text-2xl font-bold text-orange-600 dark:text-orange-400 hover:scale-105 transition-transform">
-                    <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                <a href="index.html"
+                    class="flex items-center gap-3 text-2xl font-bold text-orange-600 dark:text-orange-400 hover:scale-105 transition-transform">
+                    <svg class="w-8 h-8 text-orange-600 dark:text-orange-400 flex-shrink-0" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2" />
                     </svg>
                     <span>CloudKitchen</span>
                 </a>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-6">
                     <div class="relative group">
-                        <a href="#" class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">
+                        <a href="#"
+                            class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">
                             <span>Home</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
                             </svg>
                         </a>
-                        <div class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <a href="index.html" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-t-xl transition">
+                        <div
+                            class="absolute left-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="index.html"
+                                class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-t-xl transition">
                                 Home
                             </a>
-                            <a href="home2.html" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-b-xl transition">
+                            <a href="home2.html"
+                                class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-b-xl transition">
                                 Home2
                             </a>
                         </div>
                     </div>
-                    <a href="menu.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
-                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
-                    <a href="faq.html" class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
+                    <a href="menu.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                    <a href="about.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                    <a href="contact.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                    <a href="faq.html"
+                        class="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                     <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                        <span id="cart-count"
+                            class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </a>
                     <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
                     <!-- Dashboard Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <button
+                            class="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                             </svg>
                             <span>Dashboard</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <a href="user-dashboard.html" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-t-xl transition">
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="user-dashboard.html"
+                                class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-t-xl transition">
                                 <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
                                     <span>User Dashboard</span>
                                 </div>
                             </a>
-                            <a href="admin-dashboard.html" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-b-xl transition">
+                            <a href="admin-dashboard.html"
+                                class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-700 rounded-b-xl transition">
                                 <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                     <span>Admin Dashboard</span>
                                 </div>
@@ -119,71 +163,93 @@
                         </div>
                     </div>
                     <div class="flex items-center lg:gap-2 xl:gap-3">
-                        <a href="login.html" class="lg:px-3 lg:py-2 xl:px-4 xl:py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
-                        <a href="signup.html" class="lg:px-3 lg:py-2 xl:px-4 xl:py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                        <a href="login.html"
+                            class="lg:px-3 lg:py-2 xl:px-4 xl:py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                        <a href="signup.html"
+                            class="lg:px-3 lg:py-2 xl:px-4 xl:py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
                     </div>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" class="lg:hidden p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800">
             <div class="px-4 py-4 space-y-3 text-center">
                 <!-- Home Dropdown -->
                 <div>
-                    <button id="mobile-home-dropdown-toggle" class="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 py-2">
+                    <button id="mobile-home-dropdown-toggle"
+                        class="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 py-2">
                         <span>Home</span>
-                        <svg id="mobile-home-dropdown-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="mobile-home-dropdown-icon" class="w-4 h-4 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <div id="mobile-home-dropdown" class="hidden space-y-2 mt-2">
-                        <a href="index.html" class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Home</a>
-                        <a href="home2.html" class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Home2</a>
+                        <a href="index.html"
+                            class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Home</a>
+                        <a href="home2.html"
+                            class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Home2</a>
                     </div>
                 </div>
-                <a href="menu.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
-                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
-                <a href="contact.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
-                <a href="faq.html" class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
+                <a href="menu.html"
+                    class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Menu</a>
+                <a href="about.html"
+                    class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">About</a>
+                <a href="contact.html"
+                    class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">Contact</a>
+                <a href="faq.html"
+                    class="block text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400">FAQ</a>
                 <!-- Dashboard Dropdown -->
                 <div>
-                    <button id="mobile-dashboard-dropdown-toggle" class="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 py-2">
+                    <button id="mobile-dashboard-dropdown-toggle"
+                        class="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 py-2">
                         <span>Dashboard</span>
-                        <svg id="mobile-dashboard-dropdown-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="mobile-dashboard-dropdown-icon" class="w-4 h-4 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <div id="mobile-dashboard-dropdown" class="hidden space-y-2 mt-2">
-                        <a href="user-dashboard.html" class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">User Dashboard</a>
-                        <a href="admin-dashboard.html" class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Admin Dashboard</a>
+                        <a href="user-dashboard.html"
+                            class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">User
+                            Dashboard</a>
+                        <a href="admin-dashboard.html"
+                            class="block text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 py-2">Admin
+                            Dashboard</a>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
                     <button id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     </button>
                 </div>
                 <div class="flex items-center justify-center">
                     <a href="cart.html" class="relative p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <span id="cart-count-mobile" class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                        <span id="cart-count-mobile"
+                            class="absolute -top-1 -right-1 bg-orange-600 dark:bg-orange-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </a>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <a href="login.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
-                    <a href="signup.html" class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
+                    <a href="login.html"
+                        class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Login</a>
+                    <a href="signup.html"
+                        class="block px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 dark:from-orange-500 dark:to-orange-600 text-white font-semibold rounded-lg hover:from-orange-700 hover:to-orange-600 dark:hover:from-orange-600 dark:hover:to-orange-700 transition transform hover:scale-105 shadow-lg">Register</a>
                 </div>
             </div>
         </div>
@@ -194,59 +260,77 @@
         <!-- Animated Gradient Background -->
         <div class="absolute inset-0 gradient-mesh opacity-90 dark:opacity-80"></div>
         <div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
-        
+
         <!-- Floating Elements -->
         <div class="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-        
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+            style="animation-delay: 1s;"></div>
+
         <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
             <div class="animate-slide-in">
-                <div class="inline-block mb-6 px-6 py-3 bg-white/20 dark:bg-white/10 backdrop-blur-md rounded-full border border-white/30">
-                    <span class="text-white text-lg font-semibold">⚡ Fast Delivery • 🍽️ Fresh Meals • 💯 Quality Guaranteed</span>
+                <div
+                    class="inline-block mb-6 px-6 py-3 bg-white/20 dark:bg-white/10 backdrop-blur-md rounded-full border border-white/30">
+                    <span class="text-white text-lg font-semibold">⚡ Fast Delivery • 🍽️ Fresh Meals • 💯 Quality
+                        Guaranteed</span>
                 </div>
-                
+
                 <h1 class="text-4xl md:text-5xl font-black mb-8 text-white leading-tight">
                     Order Fresh Food
-                    <span class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">In Minutes</span>
+                    <span class="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">In
+                        Minutes</span>
                 </h1>
-                
+
                 <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light">
                     Skip the wait. Skip the hassle. Get restaurant-quality meals delivered to your door.
                 </p>
-                
+
                 <!-- Primary CTAs -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                    <a href="menu.html" class="group relative flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-2xl text-xl font-bold hover:scale-110 transition-all duration-300 shadow-2xl overflow-hidden">
+                    <a href="menu.html"
+                        class="group relative flex items-center justify-center px-10 py-5 bg-white text-gray-900 rounded-2xl text-xl font-bold hover:scale-110 transition-all duration-300 shadow-2xl overflow-hidden">
                         <span class="relative z-10 flex items-center gap-3">
                             Order Now
-                            <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                         </span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
                     </a>
-                    <a href="menu.html" class="px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white/50 text-white rounded-2xl text-xl font-bold hover:bg-white/20 hover:scale-110 transition-all duration-300">
+                    <a href="menu.html"
+                        class="px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white/50 text-white rounded-2xl text-xl font-bold hover:bg-white/20 hover:scale-110 transition-all duration-300">
                         Browse Menu
                     </a>
                 </div>
 
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto px-2">
-                    <div class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
+                    <div
+                        class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
                         <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2">10K+</div>
-                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Happy Customers</div>
+                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Happy
+                            Customers</div>
                     </div>
-                    <div class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
+                    <div
+                        class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
                         <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2">30min</div>
-                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Avg Delivery</div>
+                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Avg
+                            Delivery</div>
                     </div>
-                    <div class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
+                    <div
+                        class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
                         <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2">500+</div>
-                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Menu Items</div>
+                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Menu
+                            Items</div>
                     </div>
-                    <div class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
+                    <div
+                        class="glass bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-white/20 text-center">
                         <div class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-1 sm:mb-2">4.9★</div>
-                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Rating</div>
+                        <div class="text-xs sm:text-sm md:text-base text-white/80 font-semibold leading-tight">Rating
+                        </div>
                     </div>
                 </div>
             </div>
@@ -257,22 +341,26 @@
     <section class="py-20 px-4 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black mb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
+                <h2
+                    class="text-3xl md:text-4xl font-black mb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
                     Popular Right Now
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-400">Top picks from our kitchen</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <!-- Card 1 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
+                <div
+                    class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
                     <div class="aspect-[4/5] relative">
-                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=750&fit=crop" alt="Burger" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&h=750&fit=crop"
+                            alt="Burger" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                             <div class="text-2xl font-black mb-2">Signature Burger</div>
                             <div class="text-xl font-bold mb-4">$12.99</div>
-                            <a href="menu.html" class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
+                            <a href="menu.html"
+                                class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
                                 Order Now →
                             </a>
                         </div>
@@ -280,14 +368,17 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
+                <div
+                    class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
                     <div class="aspect-[4/5] relative">
-                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=750&fit=crop" alt="Chicken" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&h=750&fit=crop"
+                            alt="Chicken" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                             <div class="text-2xl font-black mb-2">Grilled Chicken</div>
                             <div class="text-xl font-bold mb-4">$14.99</div>
-                            <a href="menu.html" class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
+                            <a href="menu.html"
+                                class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
                                 Order Now →
                             </a>
                         </div>
@@ -295,14 +386,17 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
+                <div
+                    class="group relative overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-300">
                     <div class="aspect-[4/5] relative">
-                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=750&fit=crop" alt="Pasta" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=750&fit=crop"
+                            alt="Pasta" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
                             <div class="text-2xl font-black mb-2">Premium Pasta</div>
                             <div class="text-xl font-bold mb-4">$11.99</div>
-                            <a href="menu.html" class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
+                            <a href="menu.html"
+                                class="inline-block px-6 py-3 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition">
                                 Order Now →
                             </a>
                         </div>
@@ -311,10 +405,12 @@
             </div>
 
             <div class="text-center">
-                <a href="menu.html" class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl text-xl font-bold hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105 shadow-2xl">
+                <a href="menu.html"
+                    class="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl text-xl font-bold hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105 shadow-2xl">
                     View Full Menu
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </a>
             </div>
@@ -324,8 +420,12 @@
     <!-- Final CTA Section -->
     <section class="py-24 px-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-900 to-orange-900"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
-        
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60" viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23ffffff"
+            fill-opacity="0.05" %3E%3Cpath
+            d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"
+            /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <h2 class="text-3xl md:text-4xl font-black text-white mb-8">
                 Ready to Eat?
@@ -333,10 +433,12 @@
             <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
                 Join thousands of satisfied customers. Order now and get your meal in 30 minutes or less.
             </p>
-            <a href="menu.html" class="inline-flex items-center gap-4 px-12 py-6 bg-white text-gray-900 rounded-2xl text-xl font-black hover:scale-110 transition-all duration-300 shadow-2xl">
+            <a href="menu.html"
+                class="inline-flex items-center gap-4 px-12 py-6 bg-white text-gray-900 rounded-2xl text-xl font-black hover:scale-110 transition-all duration-300 shadow-2xl">
                 Start Ordering Now
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
             </a>
         </div>
@@ -348,14 +450,19 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-8 h-8 text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                        <svg class="w-8 h-8 text-orange-400 flex-shrink-0" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 3V21M12 3C11.4477 3 11 3.44772 11 4V8C11 8.55228 11.4477 9 12 9C12.5523 9 13 8.55228 13 8V4C13 3.44772 12.5523 3 12 3Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 21L8 15C8 13.8954 8.89543 13 10 13L14 13C15.1046 13 16 13.8954 16 15L16 21"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2" />
                         </svg>
-                        <h3 class="text-xl font-bold text-white">CloudKitchen</h3>
+                        <h3 class="text-2xl font-bold text-orange-400">CloudKitchen</h3>
                     </div>
-                    <p class="text-gray-400">Fresh food delivered fast. Your favorite cloud kitchen for quality meals.</p>
+                    <p class="text-gray-400">Fresh food delivered fast. Your favorite cloud kitchen for quality meals.
+                    </p>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
@@ -385,7 +492,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 CloudKitchen. All rights reserved.</p>
+                <p>&copy; 2026 CloudKitchen. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -397,11 +504,11 @@
     <script>
         // Smooth scroll to menu on CTA click
         document.querySelectorAll('a[href="menu.html"]').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 // Allow default navigation
             });
         });
     </script>
 </body>
-</html>
 
+</html>
